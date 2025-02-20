@@ -51,10 +51,10 @@ func NewMqttMetricsExporter(email, password string, devices map[string]string, o
 }
 
 func (m *MqttMetricsExporter) ExportMetrics() error {
-	err := m.c.Connect()
-	if err != nil {
-		slog.Error("Unable to connect to ")
-		return err
+		err := m.c.Connect()
+		if err != nil {
+			slog.Error("Unable to connect to MQTT broker", "error", err, "client", m)
+			return err
 	}
 	go m.monitorDeviceStatus()
 	return nil

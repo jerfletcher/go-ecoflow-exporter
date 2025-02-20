@@ -67,8 +67,8 @@ func (r *RedisExporter) handleTimeScaleMetrics(ctx context.Context, metrics map[
 			slog.Debug("The value is an array, skipping it", "metric", metricName)
 			continue
 		}
-		floatVal, ok := val.(float64)
-		if ok {
+		floatVal, err := convertToFloat(val)
+		if err == nil {
 			tsKey := fmt.Sprintf("ts:%s:%s", dev.SN, metricName)
 			pipe.Do(ctx, "TS.ADD", tsKey, timestamp, floatVal)
 		} else {

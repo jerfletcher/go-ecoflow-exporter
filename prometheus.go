@@ -111,8 +111,8 @@ func (p *PrometheusExporter) handleOneMetric(device EcoflowDevice, field string,
 		slog.Debug("The value is an array, skipping it", "metric", metricName)
 		return
 	}
-	floatVal, ok := val.(float64)
-	if ok {
+	floatVal, err := convertToFloat(val)
+	if err == nil {
 		gauge.Set(floatVal)
 	} else {
 		slog.Error("Unable to convert value to float, skipping metric", "value", val, "metric", metricName)
