@@ -2,9 +2,11 @@
 
 [phases.setup]
 nixPkgs = ['docker']
-aptPkgs = ['curl', 'wget', 'docker.io']
+aptPkgs = ['curl', 'wget']
 
 [phases.start]
 commands = [
+  "dockerd-entrypoint.sh &",
+  "sleep 10",  # Wait for the Docker daemon to start
   "docker compose -f docker-compose/full-service-compose.yml up --build"
 ]
