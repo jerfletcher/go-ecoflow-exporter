@@ -1,0 +1,11 @@
+# Nixpacks configuration file
+
+[phases.build]
+commands = [
+  "docker-compose -f docker-compose/full-service-compose.yml up --build"
+]
+
+[phases.start]
+commands = [
+  "docker-compose -f docker-compose/full-service-compose.yml up"
+]
