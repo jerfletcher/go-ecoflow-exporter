@@ -6,7 +6,7 @@ aptPkgs = ['curl', 'wget']
 
 [phases.start]
 commands = [
-  "dockerd-entrypoint.sh &",
+  "dockerd &",
   "sleep 10",  # Wait for the Docker daemon to start
   "docker compose -f docker-compose/full-service-compose.yml up --build"
 ]
