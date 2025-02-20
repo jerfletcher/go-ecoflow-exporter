@@ -16,3 +16,63 @@ commands = [
 commands = [
   "sudo ln -s /var/run/docker.sock /var/run/docker.sock"
 ]
+
+[services.prometheus]
+image = "prom/prometheus"
+container_name = "prometheus"
+command = [
+  "--config.file=/etc/prometheus/prometheus.yml",
+  "--storage.tsdb.retention.size=2GB"
+]
+ports = ["9090:9090"]
+restart = "unless-stopped"
+volumes = [
+  "./docker-compose/prometheus:/etc/prometheus",
+  "prometheus_data:/prometheus"
+]
+
+[services.grafana]
+image = "grafana/grafana"
+container_name = "grafana"
+ports = ["3000:3000"]
+restart = "unless-stopped"
+environment = [
+  "GF_SECURITY_ADMIN_USER=${GRAFANA_USERNAME}",
+  "GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD}"
+]
+volumes = [
+  "./docker-compose/grafana:/etc/grafana/provisioning",
+  "grafana_data:/var/lib/grafana"
+]
+
+[services.go_ecoflow_exporter]
+build = "./.."
+dockerfile = "./Dockerfile"
+container_name = "go_ecoflow_exporter"
+ports = ["2112:2112"]
+restart = "unless-stopped"
+environment = [
+  "EXPORTER_TYPE=${EXPORTER_TYPE}",
+  "ECOFLOW_ACCESS_KEY=${ECOFLOW_ACCESS_KEY}",
+  "ECOFLOW_SECRET_KEY=${ECOFLOW_SECRET_KEY}",
+  "ECOFLOW_EMAIL=${ECOFLOW_EMAIL}",
+  "ECOFLOW_PASSWORD=${ECOFLOW_PASSWORD}",
+  "ECOFLOW_DEVICES=${ECOFLOW_DEVICES}",
+  "ECOFLOW_DEVICES_PRETTY_NAMES=${ECOFLOW_DEVICES_PRETTY_NAMES}",
+  "MQTT_DEVICE_OFFLINE_THRESHOLD_SECONDS=${MQTT_DEVICE_OFFLINE_THRESHOLD_SECONDS}",
+  "PROMETHEUS_ENABLED=true",
+  "METRIC_PREFIX=${METRIC_PREFIX}",
+  "TIMESCALE_ENABLED=${TIMESCALE_ENABLED}",
+  "TIMESCALE_URL=${TIMESCALE_URL}",
+  "REDIS_ENABLED=${REDIS_ENABLED}",
+  "REDIS_URL=${REDIS_URL}",
+  "REDIS_DB=${REDIS_DB}",
+  "REDIS_USER=${REDIS_USER}",
+  "REDIS_PASSWORD=${REDIS_PASSWORD}"
+]
+
+[volumes.prometheus_data]
+driver = "local"
+
+[volumes.grafana_data]
+driver = "local"
