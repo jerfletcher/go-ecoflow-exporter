@@ -1,22 +1,5 @@
 # Nixpacks configuration file
 
-[phases.setup]
-nixPkgs = ['docker']
-aptPkgs = ['curl', 'wget']
-
-[phases.start]
-commands = [
-  "dockerd &",
-  "sleep 10",  # Wait for the Docker daemon to start
-  "docker info",  # Check if Docker daemon is running
-  "docker compose -f docker-compose/full-service-compose.yml up --build"
-]
-
-[phases.build]
-commands = [
-  "sudo ln -s /var/run/docker.sock /var/run/docker.sock"
-]
-
 [services.prometheus]
 image = "prom/prometheus"
 container_name = "prometheus"
