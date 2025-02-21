@@ -1,0 +1,119 @@
+services:
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    ports:
+      - 9090:9090
+    restart: unless-stopped
+    environment:
+      PROMETHEUS_CONFIG: |
+        global:
+          scrape_interval: 30s
+          scrape_timeout: 10s
+          evaluation_interval: 30s
+        alerting:
+          alertmanagers:
+            - scheme: http
+              static_configs:
+                - targets:
+                    - alertmanager:9093
+        rule_files:
+          - 'alerts/*.yml'
+        scrape_configs:
+          - job_name: prometheus
+            static_configs:
+              - targets:
+                  - localhost:9090
+          - job_name: ecoflow-exporter
+            static_configs:
+              - targets:
+                  - go_ecoflow_exporter:2112
+      ECOFLOW_ALERTS: |
+        groups:
+          - name: EcoFlow
+            rules:
+              - alert: EcoflowTempTooHigh
+                expr: ecoflow_inv_out_temp > 60
+                for: 1m
+                labels:
+                  severity: critical
+                annotations:
+                  summary: Inverter temperature is too high
+                  description: "Inverter temperature {{ $$labels.device }} is too high: current value is {{ $$value }}"
+              - alert: EcoFlowOffline
+                expr: ecoflow_online == 0
+                for: 1m
+                labels:
+                  severity: critical
+                annotations:
+                  summary: EcoFlow is offline
+                  description: "Device {{ $$labels.device }} has disappeared from the network"
+              - alert: EcoFlowPowerOutage
+                expr: ecoflow_inv_ac_in_vol == 0
+                for: 0m
+                labels:
+                  severity: warning
+                annotations:
+                  summary: EcoFlow detects power outage
+                  description: "Device {{ $$labels.device }} detects power outage"
+              - alert: EcoFlowLowRemainingTime
+                expr: ecoflow_bms_ems_status_dsg_remain_time < 10
+                for: 0m
+                labels:
+                  severity: critical
+                annotations:
+                  summary: EcoFlow will discharge soon
+                  description: "Device {{ $$labels.device }} will discharge in {{ $$value }} min"
+              - alert: EcoFlowHalfBattery
+                expr: ecoflow_bms_bms_status_f32_show_soc < 50
+                for: 0m
+                labels:
+                  severity: warning
+                annotations:
+                  summary: EcoFlow half battery
+                  description: "Device {{ $$labels.device }} battery level less than 50%"
+              - alert: EcoFlowLowBattery
+                expr: ecoflow_bms_bms_status_f32_show_soc < 10
+                for: 0m
+                labels:
+                  severity: critical
+                annotations:
+                  summary: EcoFlow low battery
+                  description: "Device {{ $$labels.device }} battery level less than 10%"
+              - alert: EcoFlowHighLoad
+                expr: ecoflow_inv_output_watts > 1700 and ecoflow_inv_ac_in_vol == 0
+                for: 0m
+                labels:
+                  severity: warning
+                annotations:
+                  summary: EcoFlow high load
+                  description: "Device {{ $$labels.device }} under high load: {{ $$value }}W"
+    volumes:
+      - prometheus_data:/prometheus
+    entrypoint: /bin/sh -c "mkdir -p /etc/prometheus/alerts && echo \"\$$PROMETHEUS_CONFIG\" > /etc/prometheus/prometheus.yml && echo \"\$$ECOFLOW_ALERTS\" > /etc/prometheus/alerts/ecoflow.yml && prometheus --config.file=/etc/prometheus/prometheus.yml"
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    environment:
+      GF_SECURITY_ADMIN_USER: "${GRAFANA_USERNAME}"
+      GF_SECURITY_ADMIN_PASSWORD: "${GRAFANA_PASSWORD}"
+      GRAFANA_DATASOURCE: |
+        apiVersion: 1
+        datasources:
+          - name: Prometheus
+            type: prometheus
+            url: http://prometheus:9090
+            isDefault: true
+            access: proxy
+            editable: true
+    volumes:
+      - grafana_data:/var/lib/grafana
+    entrypoint: /bin/sh -c "echo \"\$$GRAFANA_DATASOURCE\" > /etc/grafana/provisioning/datasources/datasource.yml && /run.sh"
+
+volumes:
+  prometheus_data:
+  grafana_data:
