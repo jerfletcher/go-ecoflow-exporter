@@ -1,0 +1,48 @@
+services:
+  prometheus:
+    env_file:
+      - ./docker-compose/.env
+      - ./docker-compose/.env.local
+    image: prom/prometheus
+    container_name: prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.retention.size=2GB'  # Set data size limit
+
+    ports:
+      - 9090:9090
+    restart: unless-stopped
+    volumes:
+      - ./docker-compose/prometheus:/etc/prometheus
+      - prometheus_data:/prometheus
+
+  grafana:
+    env_file:
+      - ./docker-compose/.env
+      - ./docker-compose/.env.local
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    volumes:
+      - ./docker-compose/grafana:/etc/grafana/provisioning
+      - grafana_data:/var/lib/grafana
+
+  go_ecoflow_exporter:
+    env_file:
+      - ./docker-compose/.env
+      - ./docker-compose/.env.local
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: go_ecoflow_exporter
+    ports:
+      - 2112:2112
+    restart: unless-stopped
+
+volumes:
+  prometheus_data:
+    driver: local
+  grafana_data:
+    driver: local

@@ -80,10 +80,7 @@
   "liveNow": false,
   "panels": [
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -144,10 +141,7 @@
       "pluginVersion": "9.3.6",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "exemplar": false,
           "expr": "ecoflow_online{device=\"$device\"}",
           "instant": true,
@@ -159,10 +153,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -214,10 +205,7 @@
       "pluginVersion": "9.3.6",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "exemplar": false,
           "expr": "ecoflow_inv_input_watts{device=\"$device\"}",
           "instant": true,
@@ -230,10 +218,7 @@
       "type": "gauge"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -286,10 +271,7 @@
       "pluginVersion": "9.3.6",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": true,
           "expr": "ecoflow_inv_ac_in_vol{device=\"$device\"} or ecoflow_inv_inv_in_vol{device=\"$device\"}",
@@ -303,10 +285,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -360,10 +339,7 @@
       "pluginVersion": "9.3.6",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": true,
           "expr": "ecoflow_inv_ac_in_amp{device=\"$device\"} or ecoflow_inv_inv_in_amp{device=\"$device\"}",
@@ -377,10 +353,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -438,10 +411,7 @@
       "pluginVersion": "9.3.6",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": false,
           "expr": "ecoflow_ems_chg_remain_time{device=\"$device\"} or ecoflow_bms_ems_status_chg_remain_time{device=\"$device\"}",
@@ -455,10 +425,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -503,10 +470,7 @@
       "pluginVersion": "9.3.6",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": false,
           "expr": "ecoflow_bms_master_full_cap{device=\"$device\"} or ecoflow_bms_bms_status_full_cap{device=\"$device\"}",
@@ -520,10 +484,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -568,10 +529,7 @@
       "pluginVersion": "9.3.6",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": false,
           "expr": "abs(ecoflow_bms_master_amp{device=\"$device\"}) or abs(ecoflow_bms_bms_status_amp{device=\"$device\"})",
@@ -585,10 +543,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -633,10 +588,7 @@
       "pluginVersion": "9.3.6",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": false,
           "expr": "ecoflow_bms_master_vol{device=\"$device\"} or ecoflow_bms_bms_status_vol{device=\"$device\"}",
@@ -650,10 +602,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -698,10 +647,7 @@
       "pluginVersion": "9.3.6",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": false,
           "expr": "ecoflow_bms_master_min_cell_vol{device=\"$device\"} or ecoflow_bms_bms_status_min_cell_vol{device=\"$device\"}",
@@ -715,10 +661,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -763,10 +706,7 @@
       "pluginVersion": "9.3.6",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": false,
           "expr": "ecoflow_bms_master_max_cell_vol{device=\"$device\"} or ecoflow_bms_bms_status_max_cell_vol{device=\"$device\"}",
@@ -780,10 +720,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -837,10 +774,7 @@
       "pluginVersion": "9.3.6",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": false,
           "expr": "ecoflow_bms_master_f32_show_soc{device=\"$device\"} or ecoflow_bms_bms_status_f32_show_soc{device=\"$device\"} or ecoflow_bms_master_soc{device=\"$device\"}",
@@ -853,10 +787,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -908,10 +839,7 @@
       "pluginVersion": "9.3.6",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "exemplar": false,
           "expr": "ecoflow_inv_output_watts{device=\"$device\"}",
           "instant": true,
@@ -924,10 +852,7 @@
       "type": "gauge"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -980,10 +905,7 @@
       "pluginVersion": "9.3.6",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "exemplar": true,
           "expr": "ecoflow_inv_inv_out_vol{device=\"$device\"}",
           "instant": false,
@@ -996,10 +918,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1053,10 +972,7 @@
       "pluginVersion": "9.3.6",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "exemplar": true,
           "expr": "ecoflow_inv_inv_out_amp{device=\"$device\"}",
           "instant": false,
@@ -1069,10 +985,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1134,10 +1047,7 @@
       "pluginVersion": "9.3.6",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": false,
           "expr": "ecoflow_ems_dsg_remain_time{device=\"$device\"} or ecoflow_bms_ems_status_dsg_remain_time{device=\"$device\"}",
@@ -1151,10 +1061,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1199,10 +1106,7 @@
       "pluginVersion": "9.3.6",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": false,
           "expr": "ecoflow_bms_master_remain_cap{device=\"$device\"} or ecoflow_bms_bms_status_remain_cap{device=\"$device\"}",
@@ -1216,10 +1120,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1264,10 +1165,7 @@
       "pluginVersion": "9.3.6",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": false,
           "expr": "ecoflow_bms_master_cycles{device=\"$device\"} or ecoflow_bms_bms_status_cycles{device=\"$device\"}",
@@ -1281,10 +1179,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1337,10 +1232,7 @@
       "pluginVersion": "9.3.6",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": false,
           "expr": "ecoflow_inv_out_temp{device=\"$device\"}",
@@ -1354,10 +1246,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1410,10 +1299,7 @@
       "pluginVersion": "9.3.6",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": false,
           "expr": "ecoflow_bms_master_min_cell_temp{device=\"$device\"} or ecoflow_bms_bms_status_min_cell_temp{device=\"$device\"}",
@@ -1427,10 +1313,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1483,10 +1366,7 @@
       "pluginVersion": "9.3.6",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": false,
           "expr": "ecoflow_bms_master_max_cell_temp{device=\"$device\"} or ecoflow_bms_bms_status_max_cell_temp{device=\"$device\"}",
@@ -1500,10 +1380,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1584,10 +1461,7 @@
       "pluginVersion": "9.3.6",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": false,
           "expr": "ecoflow_bms_master_amp{device=\"$device\"} or ecoflow_bms_bms_status_amp{device=\"$device\"}",
@@ -1600,10 +1474,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1685,10 +1556,7 @@
       },
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": true,
           "expr": "ecoflow_bms_master_soc{device=\"$device\"} or ecoflow_bms_bms_status_f32_show_soc{device=\"$device\"}",
@@ -1702,10 +1570,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1819,10 +1684,7 @@
       },
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "exemplar": true,
           "expr": "ecoflow_inv_input_watts{device=\"$device\"}",
           "instant": false,
@@ -1832,10 +1694,7 @@
           "refId": "A"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "exemplar": true,
           "expr": "ecoflow_inv_output_watts{device=\"$device\"}",
           "hide": false,
@@ -1850,10 +1709,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1936,10 +1792,7 @@
       "pluginVersion": "8.4.3",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": true,
           "expr": "abs(ecoflow_ems_chg_remain_time{device=\"$device\"}) or abs(ecoflow_bms_ems_status_chg_remain_time{device=\"$device\"}) ",
@@ -1951,10 +1804,7 @@
           "refId": "C"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": true,
           "expr": "abs(ecoflow_ems_dsg_remain_time{device=\"$device\"}) or abs(ecoflow_bms_ems_status_dsg_remain_time{device=\"$device\"})",
@@ -1970,10 +1820,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2052,10 +1899,7 @@
       },
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "exemplar": true,
           "expr": "ecoflow_inv_ac_in_vol{device=\"$device\"} > 0",
           "interval": "",
@@ -2063,10 +1907,7 @@
           "refId": "A"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "exemplar": true,
           "expr": "ecoflow_inv_inv_out_vol{device=\"$device\"} > 0",
           "hide": false,
@@ -2075,10 +1916,7 @@
           "refId": "E"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "exemplar": true,
           "expr": "ecoflow_bms_bms_status_vol{device=\"$device\"}",
           "hide": true,
@@ -2091,10 +1929,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2169,10 +2004,7 @@
       },
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "exemplar": true,
           "expr": "ecoflow_inv_out_temp{device=\"$device\"} != 0",
           "interval": "",
@@ -2180,10 +2012,7 @@
           "refId": "A"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": true,
           "expr": "ecoflow_pd_car_temp{device=\"$device\"} != 0",
@@ -2194,10 +2023,7 @@
           "refId": "B"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": true,
           "expr": "ecoflow_bms_master_temp{device=\"$device\"} != 0 or ecoflow_bms_bms_status_temp{device=\"$device\"} != 0",
@@ -2208,10 +2034,7 @@
           "refId": "C"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": true,
           "expr": "ecoflow_bms_master_max_cell_temp{device=\"$device\"} != 0 or ecoflow_bms_bms_status_max_cell_temp{device=\"$device\"} != 0",
@@ -2222,10 +2045,7 @@
           "refId": "D"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": true,
           "expr": "ecoflow_bms_master_min_cell_temp{device=\"$device\"} != 0 or ecoflow_bms_bms_status_min_cell_temp{device=\"$device\"} != 0",
@@ -2236,10 +2056,7 @@
           "refId": "E"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": true,
           "expr": "ecoflow_bms_master_max_mos_temp{device=\"$device\"} != 0 or ecoflow_bms_bms_status_max_mos_temp{device=\"$device\"} != 0",
@@ -2250,10 +2067,7 @@
           "refId": "F"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": true,
           "expr": "ecoflow_bms_master_min_mos_temp{device=\"$device\"} != 0 or ecoflow_bms_bms_status_min_mos_temp{device=\"$device\"} != 0",
@@ -2268,10 +2082,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2350,10 +2161,7 @@
       },
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "exemplar": true,
           "expr": "ecoflow_inv_ac_in_amp{device=\"$device\"}",
           "interval": "",
@@ -2361,10 +2169,7 @@
           "refId": "A"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "exemplar": true,
           "expr": "ecoflow_inv_inv_out_amp{device=\"$device\"}",
           "hide": false,
@@ -2373,10 +2178,7 @@
           "refId": "E"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "exemplar": true,
           "expr": "abs(ecoflow_bms_bms_status_amp{device=\"$device\"})",
           "hide": false,
@@ -2389,10 +2191,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2471,10 +2270,7 @@
       },
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "exemplar": true,
           "expr": "ecoflow_pd_usb1_watts{device=\"$device\"}",
           "interval": "",
@@ -2482,10 +2278,7 @@
           "refId": "A"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "exemplar": true,
           "expr": "ecoflow_pd_typec1_watts{device=\"$device\"}",
           "hide": false,
@@ -2498,10 +2291,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2605,10 +2395,7 @@
       },
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": true,
           "expr": "ecoflow_bms_master_vol{device=\"$device\"} or ecoflow_bms_bms_status_vol{device=\"$device\"}",
@@ -2619,10 +2406,7 @@
           "refId": "A"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": true,
           "expr": "ecoflow_bms_master_min_cell_vol{device=\"$device\"} or ecoflow_bms_bms_status_min_cell_vol{device=\"$device\"}",
@@ -2633,10 +2417,7 @@
           "refId": "C"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": true,
           "expr": "ecoflow_bms_master_max_cell_vol{device=\"$device\"} or ecoflow_bms_bms_status_max_cell_vol{device=\"$device\"}",
@@ -2661,10 +2442,7 @@
       "id": 53,
       "panels": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2744,10 +2522,7 @@
           },
           "targets": [
             {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
+              "datasource": "Prometheus",
               "editorMode": "code",
               "expr": "ecoflow_mppt_in_watts/10",
               "legendFormat": "Watts in",
@@ -2755,10 +2530,7 @@
               "refId": "A"
             },
             {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
+              "datasource": "Prometheus",
               "editorMode": "code",
               "expr": "ecoflow_mppt_in_vol * ecoflow_mppt_in_amp / 1000",
               "hide": false,
@@ -2771,10 +2543,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2853,10 +2622,7 @@
           },
           "targets": [
             {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
+              "datasource": "Prometheus",
               "editorMode": "code",
               "expr": "ecoflow_mppt_in_vol/10",
               "legendFormat": "Volts in",
@@ -2868,10 +2634,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2950,10 +2713,7 @@
           },
           "targets": [
             {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
+              "datasource": "Prometheus",
               "editorMode": "code",
               "expr": "ecoflow_mppt_in_amp/100",
               "legendFormat": "Amp in",
@@ -2965,10 +2725,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3046,10 +2803,7 @@
           },
           "targets": [
             {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
+              "datasource": "Prometheus",
               "editorMode": "code",
               "expr": "ecoflow_bms_master_amp/1000",
               "legendFormat": "Amp in",
@@ -3061,10 +2815,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3112,10 +2863,7 @@
           "pluginVersion": "9.3.6",
           "targets": [
             {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
+              "datasource": "Prometheus",
               "editorMode": "code",
               "expr": "sum_over_time(ecoflow_mppt_in_watts[$__range]) / (count_over_time(ecoflow_mppt_in_watts[1m]) * 60) / 10",
               "legendFormat": "Battery charged",
@@ -3123,10 +2871,7 @@
               "refId": "A"
             },
             {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
+              "datasource": "Prometheus",
               "editorMode": "code",
               "expr": "sum_over_time(ecoflow_mppt_out_watts[$__range]) / (count_over_time(ecoflow_mppt_out_watts[1m]) * 60) / 10",
               "hide": false,
@@ -3135,10 +2880,7 @@
               "refId": "C"
             },
             {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
+              "datasource": "Prometheus",
               "editorMode": "code",
               "expr": "sum_over_time(ecoflow_mppt_in_watts[24h]) / (count_over_time(ecoflow_mppt_in_watts[1m]) * 60) / 10",
               "hide": false,
@@ -3147,10 +2889,7 @@
               "refId": "B"
             },
             {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
+              "datasource": "Prometheus",
               "editorMode": "code",
               "expr": "sum_over_time(ecoflow_mppt_out_watts[24h]) / (count_over_time(ecoflow_mppt_out_watts[1m]) * 60) / 10",
               "hide": false,
@@ -3159,10 +2898,7 @@
               "refId": "D"
             },
             {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
+              "datasource": "Prometheus",
               "editorMode": "code",
               "expr": "sum_over_time(ecoflow_mppt_in_watts[7d]) / (count_over_time(ecoflow_mppt_in_watts[1m]) * 60) / 10",
               "hide": false,
@@ -3171,10 +2907,7 @@
               "refId": "E"
             },
             {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
+              "datasource": "Prometheus",
               "editorMode": "code",
               "expr": "sum_over_time(ecoflow_mppt_out_watts[7d]) / (count_over_time(ecoflow_mppt_out_watts[1m]) * 60) / 10",
               "hide": false,
@@ -3183,10 +2916,7 @@
               "refId": "F"
             },
             {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
+              "datasource": "Prometheus",
               "editorMode": "code",
               "expr": "sum_over_time(ecoflow_mppt_in_watts[30d]) / (count_over_time(ecoflow_mppt_in_watts[1m]) * 60) / 10",
               "hide": false,
@@ -3195,10 +2925,7 @@
               "refId": "G"
             },
             {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
+              "datasource": "Prometheus",
               "editorMode": "code",
               "expr": "sum_over_time(ecoflow_mppt_out_watts[30d]) / (count_over_time(ecoflow_mppt_out_watts[1m]) * 60) / 10",
               "hide": false,
@@ -3211,10 +2938,7 @@
           "type": "bargauge"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3300,10 +3024,7 @@
           },
           "targets": [
             {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
+              "datasource": "Prometheus",
               "editorMode": "code",
               "expr": "ecoflow_bms_master_vol/1000 * ecoflow_bms_master_amp/1000",
               "legendFormat": "Master BMS",
@@ -3311,10 +3032,7 @@
               "refId": "A"
             },
             {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
+              "datasource": "Prometheus",
               "editorMode": "code",
               "expr": "ecoflow_mppt_in_vol * ecoflow_mppt_in_amp / 1000",
               "hide": false,
@@ -3344,10 +3062,7 @@
       "type": "row"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -3422,10 +3137,7 @@
       },
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "exemplar": true,
           "expr": "rate(ecoflow_mqtt_messages_receive_total{device=\"$device\"}[1m])",
           "interval": "",
@@ -3451,10 +3163,7 @@
     "list": [
       {
         "current": {},
-        "datasource": {
-          "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
-        },
+        "datasource": "Prometheus",
         "definition": "label_values(ecoflow_online, device)",
         "description": "Serial Number of EcoFlow device",
         "hide": 0,
